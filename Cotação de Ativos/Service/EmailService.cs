@@ -8,9 +8,8 @@ using System.Text;
 public class EmailService
 {
     static ILogger logger = LogManager.GetCurrentClassLogger();
-    public void sendEmail(String bodyDoEmail)
+    public void sendEmail(String bodyDoEmail, Double price, Double sellingPrice, Double buyingPrice)
         {
-
             try
             {
                 string host = ConfigurationManager.AppSettings["SmtpHost"];
@@ -33,7 +32,7 @@ public class EmailService
             
                 mailMessage.Subject = Constants.EMAIL_SUBJECT;
                 mailMessage.SubjectEncoding = Encoding.UTF8;
-                mailMessage.Body = bodyDoEmail;
+                mailMessage.Body = bodyDoEmail + "\nPreço Atual do Ativo: "+ price +"\nPeço de Venda: "+ sellingPrice + "\nPeço de Compra: " + buyingPrice;
                 mailMessage.BodyEncoding = Encoding.UTF8;
                 mailMessage.IsBodyHtml = true;
 

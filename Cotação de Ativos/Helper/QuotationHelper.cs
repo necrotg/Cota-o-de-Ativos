@@ -18,7 +18,11 @@ public class QuotationHelper
             return true;
         }
         try
-        {
+        {   
+            if (args[1].Contains("."))
+            {
+                args[1] = args[1].Replace(".", ",");  
+            }
             Convert.ToDouble(args[1]);
         }
         catch (Exception ex)
@@ -30,6 +34,10 @@ public class QuotationHelper
 
         try
         {
+            if (args[2].Contains("."))
+            {
+                args[2] = args[2].Replace(".", ",");
+            }
             Convert.ToDouble(args[2]);
         }
         catch (Exception ex)

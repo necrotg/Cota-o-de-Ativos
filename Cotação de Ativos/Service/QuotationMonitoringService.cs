@@ -75,12 +75,12 @@ namespace Cotação_de_Ativos.Service
                 if (assetPrice > sellingPrice && isToSendEmail)
                 {
                     logger.Info(Constants.SELLING_EMAIL_MESSAGE_BODY);
-                    emailService.sendEmail(Constants.SELLING_EMAIL_MESSAGE_BODY);
+                    emailService.sendEmail(Constants.SELLING_EMAIL_MESSAGE_BODY,assetPrice,sellingPrice, buyingPrice);
                 }
                 else if (assetPrice < buyingPrice && isToSendEmail)
                 {
                     logger.Info(Constants.BUYING_EMAIL_MESSAGE_BODY);
-                    emailService.sendEmail(Constants.BUYING_EMAIL_MESSAGE_BODY);
+                    emailService.sendEmail(Constants.BUYING_EMAIL_MESSAGE_BODY, assetPrice, sellingPrice, buyingPrice);
                 }
             }
             catch (Exception ex)

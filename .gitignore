@@ -361,3 +361,5 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/Cotação de Ativos/App.config
+/Cotação de Ativos/App.config
